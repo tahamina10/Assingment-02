@@ -22,8 +22,6 @@ body{
   align-items: center;
   justify-content: space-between;
   padding: 16px 200px; 
-  /* color: white;
-  background:rgba(26, 11, 46, 1); */
 } 
 .menu {
   list-style: none;
@@ -38,7 +36,7 @@ body{
       -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
  } 
- .btn {
+ .btn , .btn-2{
   border-radius: 10000px;
   background: var(--Linear, linear-gradient(47.64deg, rgba(247, 233, 63, 1),rgba(251, 9, 180, 1),rgba(145, 0, 248, 1)));
   color: #ffffff;
@@ -49,9 +47,14 @@ body{
   justify-content: center;
   align-items: center;
   gap: 4px;
+  transition: transform 3.0s ease;
+}
+.btn-2:active {
+    transform: scale(1.5);
  }
  .menu-icon{
   display: none;
+  margin-right: 5px;
  }
   
   #banner {
@@ -228,7 +231,7 @@ body{
     display: block;
     border-radius: 40px 40px 0 0;
 }
-#meet {
+#meet-section {
     background: #1A0B2E;
     padding-top: 80px;
 
@@ -241,7 +244,7 @@ body{
     padding-bottom: 120px;
 }
 
-.meet-container .host-container {
+.meet-container .meet-content {
     display: flex;
     justify-content: space-between;
     background: rgba(83, 60, 114, 0.2);
@@ -253,17 +256,17 @@ body{
     border-radius: 40px;
 }
 
-.meet-container .host-container .socials {
+.meet-container .meet-content .meets {
     display: flex;
     gap: 30px;
 }
 
-.meet-container .host-container p {
+.meet-container .meet-content p {
     margin: 16px 0;
     text-align: left;
 }
 
-.meet-container .host-container .socials .icons {
+.meet-container .meet-content .meets .icon {
     border: 1px solid #533C72;
     width: 40px;
     height: 40px;
@@ -315,4 +318,64 @@ footer h1,p {
     background-clip: text;
     color: transparent;
     background-image: linear-gradient(45deg, #F7E93F, #FB09B4, #9100F8);
+}
+
+@media screen and (max-width: 576px) {
+    .navbar{
+        padding: 16px 20px;
+    }
+     .menu, .btn {
+        display: none;
+    }
+
+     .menu-icon {
+        display: flex;
+        margin-right: 5px;
+        display: inline;
+       
+    }
+
+    .about-section .about-section-bottom {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+
+    #techwave .techwave-container {
+        grid-template-columns: 1fr;
+    }
+
+    #techwave .techwave-container .techwave-column {
+        grid-column: 1/1 !important;
+    }
+
+    #episodes .episodes-cards {
+        flex-direction: column;
+    }
+
+    .meet-container .meet-content {
+        flex-direction: column;
+        align-content: center;
+    }
+
+    .meet-container .meet-content p, h2 {
+        text-align: center;
+    }
+
+    .meet-container .meet-content .meets .icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    footer{
+        background-image: url(./assets/footer-bg.png);
+        margin-top: 60px;
+        padding: 20px;
+        justify-content: center;
+    }
+     .footer-container .logo-links {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
 }
